@@ -1,0 +1,96 @@
+[
+    {
+        "label": "get_data",
+        "importPath": "aoc.api",
+        "description": "aoc.api",
+        "isExtraImport": true,
+        "detail": "aoc.api",
+        "documentation": {}
+    },
+    {
+        "label": "get_data",
+        "importPath": "aoc.api",
+        "description": "aoc.api",
+        "isExtraImport": true,
+        "detail": "aoc.api",
+        "documentation": {}
+    },
+    {
+        "label": "get_data",
+        "importPath": "aoc.api",
+        "description": "aoc.api",
+        "isExtraImport": true,
+        "detail": "aoc.api",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "2025.aoc.day_one.part_one",
+        "description": "2025.aoc.day_one.part_one",
+        "peekOfCode": "def main():\n    instructions = get_data(url=\"https://adventofcode.com/2025/day/1/input\")\n    dial = [num for num in range(0, 100)]\n    dial_pointer = dial.index(50)\n    password = 0\n    for instruction in instructions:\n        if dial[dial_pointer] == 0:\n            password += 1\n        direction = instruction[0]\n        clicks = int(instruction[1:])",
+        "detail": "2025.aoc.day_one.part_one",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "2025.aoc.day_one.part_two",
+        "description": "2025.aoc.day_one.part_two",
+        "peekOfCode": "def main():\n    instructions = get_data(url=\"https://adventofcode.com/2025/day/1/input\")\n    dial = [num for num in range(0, 100)]\n    dial_pointer = dial.index(50)\n    password = 0\n    for instruction in instructions:\n        direction = instruction[0]\n        clicks = int(instruction[1:])\n        for _ in range(clicks):\n            if dial_pointer == 0:",
+        "detail": "2025.aoc.day_one.part_two",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "2025.aoc.day_two.part_one",
+        "description": "2025.aoc.day_two.part_one",
+        "peekOfCode": "def main():\n    instructions = get_data(url=\"https://adventofcode.com/2025/day/2/input\")\n    instructions = instructions[0].split(\",\")\n    invalid_ids = []\n    for id_range in instructions:\n        range_start, range_end = id_range.split(\"-\")\n        range_start, range_end = int(range_start), int(range_end)\n        for num in range(range_start, range_end + 1):\n            str_num = str(num)\n            if len(str_num) % 2 == 0:",
+        "detail": "2025.aoc.day_two.part_one",
+        "documentation": {}
+    },
+    {
+        "label": "get_data",
+        "kind": 2,
+        "importPath": "2025.aoc.api",
+        "description": "2025.aoc.api",
+        "peekOfCode": "def get_data(url: str) -> list[Any]:\n    load_dotenv()\n    aoc_session = os.getenv(\"AOC_SESSION\")\n    cookies = {\"session\": aoc_session}\n    response = requests.get(url, cookies=cookies)\n    data = response.text.strip().splitlines()\n    return data",
+        "detail": "2025.aoc.api",
+        "documentation": {}
+    }
+]
