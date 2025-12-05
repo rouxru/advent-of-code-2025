@@ -1,17 +1,8 @@
 from aoc.api import get_data
 
-TEST = [
-    "3-5",
-    "10-14",
-    "16-20",
-    "12-18",
-    "",
-]
-
 
 def main():
     instructions = get_data(url="https://adventofcode.com/2025/day/5/input")
-    # instructions = TEST
 
     split_idx = instructions.index("")
     ranges = []
